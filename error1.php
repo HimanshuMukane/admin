@@ -16,7 +16,7 @@
     </style>
   </head>
   <body style="background: -webkit-linear-gradient(left, #3931af, #00c6ff);color:white;padding-top:100px;text-align:center;">
-    <h3>Confirm Password doesn't match Password!<br>Please try again.</h3><br><br>
+    <h3>Confirm PASSWORD doesn't match PASSWORD!<br>Please try again.</h3><br><br>
     <a href="index.php" class="btn btn-outline-light">Try Again</a>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

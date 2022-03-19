@@ -7,11 +7,11 @@ include('newfunc.php');
 if(isset($_POST['docsub']))
 {
   $professor=$_POST['professor'];
-  $dpassword=$_POST['dpassword'];
-  $demail=$_POST['demail'];
+  $dPASSWORD=$_POST['dPASSWORD'];
+  $dEMAIL_ID=$_POST['dEMAIL_ID'];
   $spec=$_POST['special'];
   $docFees=$_POST['docFees'];
-  $query="insert into doctb(username,password,email,spec,docFees)values('$professor','$dpassword','$demail','$spec','$docFees')";
+  $query="insert into doctb(F_NAME,PASSWORD,EMAIL_ID,spec,docFees)values('$professor','$dPASSWORD','$dEMAIL_ID','$spec','$docFees')";
   $result=mysqli_query($con,$query);
   if($result)
     {
@@ -22,8 +22,8 @@ if(isset($_POST['docsub']))
 
 if(isset($_POST['docsub1']))
 {
-  $demail=$_POST['demail'];
-  $query="delete from doctb where email='$demail';";
+  $dEMAIL_ID=$_POST['dEMAIL_ID'];
+  $query="delete from doctb where EMAIL_ID='$dEMAIL_ID';";
   $result=mysqli_query($con,$query);
   if($result)
     {
@@ -62,8 +62,8 @@ if(isset($_POST['docsub1']))
 
   <script >
     var check = function() {
-  if (document.getElementById('dpassword').value ==
-    document.getElementById('cdpassword').value) {
+  if (document.getElementById('dPASSWORD').value ==
+    document.getElementById('cdPASSWORD').value) {
     document.getElementById('message').style.color = '#5dd05d';
     document.getElementById('message').innerHTML = 'Matched';
   } else {
@@ -175,19 +175,19 @@ if(isset($_POST['docsub1']))
       <div class="tab-pane fade" id="list-prof" role="tabpanel" aria-labelledby="list-home-list">
               
               <div class="col-md-8">
-     
+      
     </div>
     <table id="table" data-toggle="table" data-search="true" data-filter-control="true" data-click-to-select="true" data-toolbar="#toolbar" class="table-responsive table table-hover">
                 <thead>
                   <tr>
-                  <th data-field="fname" data-filter-control="input" data-sortable="true" scope="col">First Name</th>
-                  <th data-field="lname" data-filter-control="input" data-sortable="true" scope="col">Last Name</th>
-                    <th data-field="mail" data-filter-control="input" data-sortable="true" scope="col">Mail</th>
-                    <th data-field="gender" data-filter-control="select" data-sortable="true" scope="col">Gender</th>
-                    <th data-field="contact" data-filter-control="input" data-sortable="true" scope="col">Contact</th>
-                    <th data-field="doj" data-filter-control="input" data-sortable="true" scope="col">Date of Joining</th>
-                    <th data-field="dol" data-filter-control="input" data-sortable="true" scope="col">Date of Leaving</th>
-                    <th data-field="examen" data-filter-control="select" data-sortable="true" scope="col">Branch</th>
+                  <th data-field="F_NAME" data-filter-control="input" data-sortable="true" scope="col">First Name</th>
+                  <th data-field="L_NAME" data-filter-control="input" data-sortable="true" scope="col">Last Name</th>
+                    <th data-field="MAR_ST" data-filter-control="input" data-sortable="true" scope="col">Mail</th>
+                    <th data-field="EMAIL_ID" data-filter-control="select" data-sortable="true" scope="col">Gender</th>
+                    <th data-field="MOBILE_NO" data-filter-control="input" data-sortable="true" scope="col">MOBILE_NO</th>
+                    <th data-field="PASSWORD" data-filter-control="input" data-sortable="true" scope="col">Date of Joining</th>
+                    <th data-field="DOB" data-filter-control="input" data-sortable="true" scope="col">Date of Leaving</th>
+                    <th data-field="CONF_DATE" data-filter-control="select" data-sortable="true" scope="col">Branch</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -197,24 +197,24 @@ if(isset($_POST['docsub1']))
                     $query = "select * from teacherreg";
                     $result = mysqli_query($con,$query);
                     while ($row = mysqli_fetch_array($result)){
-                      $fname = $row['fname'];
-                      $lname = $row['lname'];
-                      $email = $row['email'];
-                      $gender = $row['gender'];
-                      $contact = $row['contact'];
-                      $doj = $row['doj'];
-                      $dol = $row['dol'];
-                      $branch = $row['branch'];
+                      $F_NAME = $row['F_NAME'];
+                      $L_NAME = $row['L_NAME'];
+                      $MAR_ST = $row['MAR_ST'];
+                      $EMAIL_ID = $row['EMAIL_ID'];
+                      $MOBILE_NO = $row['MOBILE_NO'];
+                      $PASSWORD = $row['PASSWORD'];
+                      $DOB = $row['DOB'];
+                      $CONF_DATE = $row['CONF_DATE'];
                       
                       echo "<tr>
-                      <td>$fname</td>
-                      <td>$lname</td>
-                      <td>$email</td>
-                      <td>$gender</td>
-                        <td>$contact</td>
-                        <td>$doj</td>
-                        <td>$dol</td>
-                        <td>$branch</td>
+                      <td>$F_NAME</td>
+                      <td>$L_NAME</td>
+                      <td>$MAR_ST</td>
+                      <td>$EMAIL_ID</td>
+                        <td>$MOBILE_NO</td>
+                        <td>$PASSWORD</td>
+                        <td>$DOB</td>
+                        <td>$CONF_DATE</td>
                       </tr>";
                     }
 

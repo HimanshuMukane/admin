@@ -2,13 +2,13 @@
 // session_start();
 $con=mysqli_connect("localhost","root","","admindb");
 // if(isset($_POST['submit'])){
-//  $username=$_POST['username'];
-//  $password=$_POST['password'];
-//  $query="select * from logintb where username='$username' and password='$password';";
+//  $F_NAME=$_POST['F_NAME'];
+//  $PASSWORD=$_POST['PASSWORD'];
+//  $query="select * from logintb where F_NAME='$F_NAME' and PASSWORD='$PASSWORD';";
 //  $result=mysqli_query($con,$query);
 //  if(mysqli_num_rows($result)==1)
 //  {
-//   $_SESSION['username']=$username;
+//   $_SESSION['F_NAME']=$F_NAME;
 //   $_SESSION['pid']=
 //   header("Location:admin-panel.php");
 //  }
@@ -17,9 +17,9 @@ $con=mysqli_connect("localhost","root","","admindb");
 // }
 if(isset($_POST['update_data']))
 {
- $contact=$_POST['contact'];
+ $MOBILE_NO=$_POST['MOBILE_NO'];
  $status=$_POST['status'];
- $query="update appointmenttb set payment='$status' where contact='$contact';";
+ $query="update appointmenttb set payment='$status' where MOBILE_NO='$MOBILE_NO';";
  $result=mysqli_query($con,$query);
  if($result)
   header("Location:updated.php");
@@ -32,9 +32,9 @@ if(isset($_POST['update_data']))
 //  $result=mysqli_query($con,$query);
 //  while($row=mysqli_fetch_array($result))
 //  {
-//   $username=$row['username'];
+//   $F_NAME=$row['F_NAME'];
 //   $price=$row['docFees'];
-//   echo '<option value="' .$username. '" data-value="'.$price.'">'.$username.'</option>';
+//   echo '<option value="' .$F_NAME. '" data-value="'.$price.'">'.$F_NAME.'</option>';
 //  }
 // }
 
@@ -57,10 +57,10 @@ function display_docs()
  $result = mysqli_query($con,$query);
  while( $row = mysqli_fetch_array($result) )
  {
-  $username = $row['username'];
+  $F_NAME = $row['F_NAME'];
   $price = $row['docFees'];
   $spec = $row['spec'];
-  echo '<option value="' .$username. '" data-value="'.$price.'" data-spec="'.$spec.'">'.$username.'</option>';
+  echo '<option value="' .$F_NAME. '" data-value="'.$price.'" data-spec="'.$spec.'">'.$F_NAME.'</option>';
  }
 }
 
@@ -71,7 +71,7 @@ function display_docs()
 //   while($row = mysqli_fetch_array($result))
 //   {
 //     $spec = $row['spec'];
-//     $username = $row['username'];
+//     $F_NAME = $row['F_NAME'];
 //     echo '<option value = "' .$spec. '">'.$spec.'</option>';
 //   }
 // }
@@ -79,8 +79,8 @@ function display_docs()
 
 if(isset($_POST['doc_sub']))
 {
- $username=$_POST['username'];
- $query="insert into doctb(username)values('$username')";
+ $F_NAME=$_POST['F_NAME'];
+ $query="insert into doctb(F_NAME)values('$F_NAME')";
  $result=mysqli_query($con,$query);
  if($result)
   header("Location:adddoc.php");

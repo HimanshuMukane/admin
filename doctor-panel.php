@@ -89,7 +89,7 @@ if(isset($_GET['cancel']))
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" method="post" action="search.php">
-      <input class="form-control mr-sm-2" type="text" placeholder="Enter contact number" aria-label="Search" name="contact">
+      <input class="form-control mr-sm-2" type="text" placeholder="Enter MOBILE_NO number" aria-label="Search" name="MOBILE_NO">
       <input type="submit" class="btn btn-outline-light" id="inputbtn" name="search_submit" value="Search">
     </form>
   </div>
@@ -167,8 +167,8 @@ if(isset($_GET['cancel']))
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
                     <th scope="col">Gender</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Contact</th>
+                    <th scope="col">EMAIL_ID</th>
+                    <th scope="col">MOBILE_NO</th>
                     <th scope="col">Appointment Date</th>
                     <th scope="col">Appointment Time</th>
                     <th scope="col">Current Status</th>
@@ -181,18 +181,18 @@ if(isset($_GET['cancel']))
                     $con=mysqli_connect("localhost","root","","admindb");
                     global $con;
                     $dname = $_SESSION['dname'];
-                    $query = "select pid,ID,fname,lname,gender,email,contact,appdate,apptime,userStatus,professorStatus from appointmenttb where professor='$dname';";
+                    $query = "select pid,ID,F_NAME,L_NAME,gender,EMAIL_ID,MOBILE_NO,appdate,apptime,userStatus,professorStatus from appointmenttb where professor='$dname';";
                     $result = mysqli_query($con,$query);
                     while ($row = mysqli_fetch_array($result)){
                       ?>
                       <tr>
                       <td><?php echo $row['pid'];?></td>
                         <td><?php echo $row['ID'];?></td>
-                        <td><?php echo $row['fname'];?></td>
-                        <td><?php echo $row['lname'];?></td>
+                        <td><?php echo $row['F_NAME'];?></td>
+                        <td><?php echo $row['L_NAME'];?></td>
                         <td><?php echo $row['gender'];?></td>
-                        <td><?php echo $row['email'];?></td>
-                        <td><?php echo $row['contact'];?></td>
+                        <td><?php echo $row['EMAIL_ID'];?></td>
+                        <td><?php echo $row['MOBILE_NO'];?></td>
                         <td><?php echo $row['appdate'];?></td>
                         <td><?php echo $row['apptime'];?></td>
                         <td>
@@ -271,7 +271,7 @@ if(isset($_GET['cancel']))
                     $con=mysqli_connect("localhost","root","","admindb");
                     global $con;
 
-                    $query = "select pid,fname,lname,ID,appdate,apptime,disease,allergy,prescription from prestb where professor='$professor';";
+                    $query = "select pid,F_NAME,L_NAME,ID,appdate,apptime,disease,allergy,prescription from prestb where professor='$professor';";
                     
                     $result = mysqli_query($con,$query);
                     if(!$result){
@@ -283,8 +283,8 @@ if(isset($_GET['cancel']))
                   ?>
                       <tr>
                         <td><?php echo $row['pid'];?></td>
-                        <td><?php echo $row['fname'];?></td>
-                        <td><?php echo $row['lname'];?></td>
+                        <td><?php echo $row['F_NAME'];?></td>
+                        <td><?php echo $row['L_NAME'];?></td>
                         <td><?php echo $row['ID'];?></td>
                         
                         <td><?php echo $row['appdate'];?></td>
@@ -310,8 +310,8 @@ if(isset($_GET['cancel']))
                   <tr>
                     <th scope="col">First Name</th>
                     <th scope="col">Last Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Contact</th>
+                    <th scope="col">EMAIL_ID</th>
+                    <th scope="col">MOBILE_NO</th>
                     <th scope="col">professor Name</th>
                     <th scope="col">Consultancy Fees</th>
                     <th scope="col">Appointment Date</th>
@@ -328,16 +328,16 @@ if(isset($_GET['cancel']))
                     $result = mysqli_query($con,$query);
                     while ($row = mysqli_fetch_array($result)){
               
-                      #$fname = $row['fname'];
-                      #$lname = $row['lname'];
-                      #$email = $row['email'];
-                      #$contact = $row['contact'];
+                      #$F_NAME = $row['F_NAME'];
+                      #$L_NAME = $row['L_NAME'];
+                      #$EMAIL_ID = $row['EMAIL_ID'];
+                      #$MOBILE_NO = $row['MOBILE_NO'];
                   ?>
                       <tr>
-                        <td><?php echo $row['fname'];?></td>
-                        <td><?php echo $row['lname'];?></td>
-                        <td><?php echo $row['email'];?></td>
-                        <td><?php echo $row['contact'];?></td>
+                        <td><?php echo $row['F_NAME'];?></td>
+                        <td><?php echo $row['L_NAME'];?></td>
+                        <td><?php echo $row['EMAIL_ID'];?></td>
+                        <td><?php echo $row['MOBILE_NO'];?></td>
                         <td><?php echo $row['professor'];?></td>
                         <td><?php echo $row['docFees'];?></td>
                         <td><?php echo $row['appdate'];?></td>
@@ -359,10 +359,10 @@ if(isset($_GET['cancel']))
           <div class="row">
                   <div class="col-md-4"><label>professor Name:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control" name="professor" required></div><br><br>
-                  <div class="col-md-4"><label>Password:</label></div>
-                  <div class="col-md-8"><input type="password" class="form-control"  name="dpassword" required></div><br><br>
-                  <div class="col-md-4"><label>Email ID:</label></div>
-                  <div class="col-md-8"><input type="email"  class="form-control" name="demail" required></div><br><br>
+                  <div class="col-md-4"><label>PASSWORD:</label></div>
+                  <div class="col-md-8"><input type="PASSWORD" class="form-control"  name="dPASSWORD" required></div><br><br>
+                  <div class="col-md-4"><label>EMAIL_ID ID:</label></div>
+                  <div class="col-md-8"><input type="EMAIL_ID"  class="form-control" name="dEMAIL_ID" required></div><br><br>
                   <div class="col-md-4"><label>Consultancy Fees:</label></div>
                   <div class="col-md-8"><input type="text" class="form-control"  name="docFees" required></div><br><br>
                 </div>

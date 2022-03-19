@@ -2,20 +2,20 @@
 session_start();
 $con=mysqli_connect("localhost","root","","admindb");
 if(isset($_POST['docsub1'])){
-	$dname=$_POST['username3'];
-	$dpass=$_POST['password3'];
-	$query="select * from doctb where username='$dname' and password='$dpass';";
+	$dname=$_POST['F_NAME3'];
+	$dpass=$_POST['PASSWORD3'];
+	$query="select * from doctb where F_NAME='$dname' and PASSWORD='$dpass';";
 	$result=mysqli_query($con,$query);
 	if(mysqli_num_rows($result)==1)
 	{
     while($row=mysqli_fetch_array($result,MYSQLI_ASSOC)){
-		      $_SESSION['dname']=$row['username'];
+		      $_SESSION['dname']=$row['F_NAME'];
     }
 		header("Location:professor-panel.php");
 	}
 	else{
     // header("Location:error2.php");
-    echo("<script>alert('Invalid Username or Password. Try Again!');
+    echo("<script>alert('Invalid F_NAME or PASSWORD. Try Again!');
           window.location.href = 'index.php';</script>");
   }
 }
@@ -24,7 +24,7 @@ if(isset($_POST['docsub1'])){
 //   $result=mysqli_query($con,$query);
 //   if(mysqli_num_rows($result)==1)
 //   {
-//     $_SESSION['username']=$username;
+//     $_SESSION['F_NAME']=$F_NAME;
 //     header("Location:admin-panel.php");
 //   }
 //   else
@@ -80,7 +80,7 @@ function display_admin_panel(){
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" method="post" action="search.php">
-      <input class="form-control mr-sm-2" type="text" placeholder="enter contact number" aria-label="Search" name="contact">
+      <input class="form-control mr-sm-2" type="text" placeholder="enter MOBILE_NO number" aria-label="Search" name="MOBILE_NO">
       <input type="submit" class="btn btn-outline-light my-2 my-sm-0 btn btn-outline-light" id="inputbtn" name="search_submit" value="Search">
     </form>
   </div>
@@ -121,13 +121,13 @@ function display_admin_panel(){
               <form class="form-group" method="post" action="appointment.php">
                 <div class="row">
                   <div class="col-md-4"><label>First Name:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="fname"></div><br><br>
+                  <div class="col-md-8"><input type="text" class="form-control" name="F_NAME"></div><br><br>
                   <div class="col-md-4"><label>Last Name:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control"  name="lname"></div><br><br>
-                  <div class="col-md-4"><label>Email id:</label></div>
-                  <div class="col-md-8"><input type="text"  class="form-control" name="email"></div><br><br>
-                  <div class="col-md-4"><label>Contact Number:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control"  name="contact"></div><br><br>
+                  <div class="col-md-8"><input type="text" class="form-control"  name="L_NAME"></div><br><br>
+                  <div class="col-md-4"><label>EMAIL_ID id:</label></div>
+                  <div class="col-md-8"><input type="text"  class="form-control" name="EMAIL_ID"></div><br><br>
+                  <div class="col-md-4"><label>MOBILE_NO Number:</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control"  name="MOBILE_NO"></div><br><br>
                   <div class="col-md-4"><label>professor:</label></div>
                   <div class="col-md-8">
                    <select name="professor" class="form-control" >
@@ -164,7 +164,7 @@ function display_admin_panel(){
         <div class="card">
           <div class="card-body">
             <form class="form-group" method="post" action="func.php">
-              <input type="text" name="contact" class="form-control" placeholder="enter contact"><br>
+              <input type="text" name="MOBILE_NO" class="form-control" placeholder="enter MOBILE_NO"><br>
               <select name="status" class="form-control">
                <option value="" disabled selected>Select Payment Status to update</option>
                 <option value="paid">paid</option>

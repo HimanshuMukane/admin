@@ -12,11 +12,11 @@
 include("newfunc.php");
 if(isset($_POST['app_search_submit']))
 {
-	$contact=$_POST['app_contact'];
-	$query = "select * from appointmenttb where contact= '$contact';";
+	$MOBILE_NO=$_POST['app_MOBILE_NO'];
+	$query = "select * from appointmenttb where MOBILE_NO= '$MOBILE_NO';";
   $result = mysqli_query($con,$query);
   $row=mysqli_fetch_array($result);
-  if($row['fname']=="" & $row['lname']=="" & $row['email']=="" & $row['contact']=="" & $row['professor']=="" & $row['docFees']=="" & $row['appdate']=="" & $row['apptime']==""){
+  if($row['F_NAME']=="" & $row['L_NAME']=="" & $row['EMAIL_ID']=="" & $row['MOBILE_NO']=="" & $row['professor']=="" & $row['docFees']=="" & $row['appdate']=="" & $row['apptime']==""){
     echo "<script> alert('No entries found! Please enter valid details'); 
           window.location.href = 'admin-panel1.php#list-doc';</script>";
   }
@@ -29,8 +29,8 @@ if(isset($_POST['app_search_submit']))
       <tr>
         <th scope='col'>First Name</th>
         <th scope='col'>Last Name</th>
-        <th scope='col'>Email</th>
-        <th scope='col'>Contact</th>
+        <th scope='col'>EMAIL_ID</th>
+        <th scope='col'>MOBILE_NO</th>
         <th scope='col'>professor Name</th>
         <th scope='col'>Consultancy Fees</th>
         <th scope='col'>Appointment Date</th>
@@ -41,10 +41,10 @@ if(isset($_POST['app_search_submit']))
     <tbody>";
   
     
-          $fname = $row['fname'];
-          $lname = $row['lname'];
-          $email = $row['email'];
-          $contact = $row['contact'];
+          $F_NAME = $row['F_NAME'];
+          $L_NAME = $row['L_NAME'];
+          $EMAIL_ID = $row['EMAIL_ID'];
+          $MOBILE_NO = $row['MOBILE_NO'];
           $professor = $row['professor'];
           $docFees= $row['docFees'];
           $appdate= $row['appdate'];
@@ -63,10 +63,10 @@ if(isset($_POST['app_search_submit']))
                       $appstatus = "Cancelled by professor";
                     }
           echo "<tr>
-            <td>$fname</td>
-            <td>$lname</td>
-            <td>$email</td>
-            <td>$contact</td>
+            <td>$F_NAME</td>
+            <td>$L_NAME</td>
+            <td>$EMAIL_ID</td>
+            <td>$MOBILE_NO</td>
             <td>$professor</td>
             <td>$docFees</td>
             <td>$appdate</td>

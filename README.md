@@ -9,8 +9,8 @@ Live Demo : [Hospital Management System - 000webhost by Kishan](https://kishan07
 ## Need to work on:
 
 1. Ability to accept the appointment by the professor to acknowledge the Teacher that their appointment has been approved.
-2. User should not be allowed to register if he/she tries to provide the already registered email ID.
-3. The password should be encrypted and the password field shouldn't be displayed in the admin panel.
+2. User should not be allowed to register if he/she tries to provide the already registered EMAIL_ID ID.
+3. The PASSWORD should be encrypted and the PASSWORD field shouldn't be displayed in the admin panel.
 4. Implementation of pagination for all the list view across the application.
 5. Bug fix - Bill payment receipt contains multiple record if the Teacher has associated with the same professor multiple times.
 6. Addition of more fields in the prescription statement to make it more specific one.
@@ -63,7 +63,7 @@ Hospital Management System in php and mysql. This system has a ‘Home’ page f
 
 ![image](https://user-images.githubusercontent.com/36665975/66569816-f4b41400-eb89-11e9-9377-d9ce53ded088.png)
 
-‘Contact’ page allows users to provide feedback or queries about the services of the hospital. Fig 1.3 shows the ‘Contact’ page.
+‘MOBILE_NO’ page allows users to provide feedback or queries about the services of the hospital. Fig 1.3 shows the ‘MOBILE_NO’ page.
 
 ![image](https://user-images.githubusercontent.com/36665975/66569890-157c6980-eb8a-11e9-9b2f-c0e8a6ef702e.png)
 
@@ -75,7 +75,7 @@ The ‘Home’ page consists of 3 modules:
 ### Teacher Module:
 
   &nbsp; &nbsp; &nbsp; This module allows Teachers to create their account, book an appointment to see a professor and see their appointment history.
-  The registration page(in the home page itself) asks Teachers to enter their First Name, Last Name, Email ID, Contact Number, Password and radio buttons to select their gender.
+  The registration page(in the home page itself) asks Teachers to enter their First Name, Last Name, EMAIL_ID ID, MOBILE_NO Number, PASSWORD and radio buttons to select their gender.
   
   ![image](https://user-images.githubusercontent.com/36665975/66570027-5b393200-eb8a-11e9-9e97-088630b5e583.png)
 
@@ -122,14 +122,14 @@ In this page, professor can able to see their appointments which has been booked
 
 ![image](https://user-images.githubusercontent.com/36665975/66570704-be779400-eb8b-11e9-92ae-21d8e0e4aba4.png)
 
-In real-time, the professors will have thousands of appointments. It will be easier for a professor to search for appointment in the case of more appointments. To make it easier, I have a ‘Search’ box in the navigation bar (See Fig 1.12) which allows professors to search for a Teacher by their contact number.
+In real-time, the professors will have thousands of appointments. It will be easier for a professor to search for appointment in the case of more appointments. To make it easier, I have a ‘Search’ box in the navigation bar (See Fig 1.12) which allows professors to search for a Teacher by their MOBILE_NO number.
 &nbsp; &nbsp; &nbsp; Once everything is done, the professor can logout of their account. Thus, in general, a professor can login into his/her account, view their appointments and search for a Teacher. This is all about professor Module.
 
 ### Admin Module:
    
-   &nbsp; &nbsp; &nbsp; This module is the heart of our project where an admin can see the list of all Teachers. professors and appointments and the feedback/queries received from the ‘Contact’ page. Also admin can add professor too. 
+   &nbsp; &nbsp; &nbsp; This module is the heart of our project where an admin can see the list of all Teachers. professors and appointments and the feedback/queries received from the ‘MOBILE_NO’ page. Also admin can add professor too. 
   &nbsp; &nbsp; &nbsp; Login into admin account can be done by toggling into admin tab of the Home page. Fig 1.13 shows the login page for admin.
-  &nbsp; &nbsp; &nbsp; `username`: admin, `password`: admin123
+  &nbsp; &nbsp; &nbsp; `F_NAME`: admin, `PASSWORD`: admin123
 
 ![image](https://user-images.githubusercontent.com/36665975/66570795-e961e800-eb8b-11e9-94e2-79940ff1d45e.png)
 
@@ -142,25 +142,25 @@ This module allows admin to perform five major operations:
 
 **1. View the list of all Teachers registered:**
 
-  &nbsp; &nbsp; &nbsp; Admin can able to view all the Teachers registered. This includes the Teachers’ First Name, Last Name, Email ID, Contact Number and Password. (See Fig 1.15).As like in professor module, admin can also search for a Teacher by their contact number in the search box.
+  &nbsp; &nbsp; &nbsp; Admin can able to view all the Teachers registered. This includes the Teachers’ First Name, Last Name, EMAIL_ID ID, MOBILE_NO Number and PASSWORD. (See Fig 1.15).As like in professor module, admin can also search for a Teacher by their MOBILE_NO number in the search box.
   
   ![image](https://user-images.githubusercontent.com/36665975/66571179-83c22b80-eb8c-11e9-8819-008cdd2b0c2e.png)
   
 **2. View the list of all professors registered:**
 
-  &nbsp; &nbsp; &nbsp; Details of the professors can also be viewed by the admin. This details include the Name of the professor, Password, Email and Consultancy fees, shown in Fig 1.16. Searching for a professor can be done by using the professor’s Email ID in the search box.
+  &nbsp; &nbsp; &nbsp; Details of the professors can also be viewed by the admin. This details include the Name of the professor, PASSWORD, EMAIL_ID and Consultancy fees, shown in Fig 1.16. Searching for a professor can be done by using the professor’s EMAIL_ID ID in the search box.
 
 ![image](https://user-images.githubusercontent.com/36665975/66571329-a5bbae00-eb8c-11e9-89be-ce1a9c73e01b.png)
 
 **3. View the Appointment lists:**
 
-  &nbsp; &nbsp; &nbsp; Admin can also able to see the entire details of the appointment that shows the appointment details of the Teachers with their respective professors. This includes the First Name, Last Name, Email and Contact Number of Teachers, professor’s name, Appointment Date, Time and the Consultancy Fees. (See Fig 1.17). 
+  &nbsp; &nbsp; &nbsp; Admin can also able to see the entire details of the appointment that shows the appointment details of the Teachers with their respective professors. This includes the First Name, Last Name, EMAIL_ID and MOBILE_NO Number of Teachers, professor’s name, Appointment Date, Time and the Consultancy Fees. (See Fig 1.17). 
   
   ![image](https://user-images.githubusercontent.com/36665975/66571377-c3891300-eb8c-11e9-92d2-6755204564c7.png)
   
 **4. Add professor:**
 
-  &nbsp; &nbsp; &nbsp; Admin alone can add a new professor since anyone can register as a professor if we put this section on the home page. This form asks professor’s Name, Email ID, Password and his/her Consultancy Fees.(See Fig 1.18)
+  &nbsp; &nbsp; &nbsp; Admin alone can add a new professor since anyone can register as a professor if we put this section on the home page. This form asks professor’s Name, EMAIL_ID ID, PASSWORD and his/her Consultancy Fees.(See Fig 1.18)
   
   ![image](https://user-images.githubusercontent.com/36665975/66571687-55911b80-eb8d-11e9-9859-54e15d4ad8a0.png)
   
@@ -170,7 +170,7 @@ This module allows admin to perform five major operations:
   
 **5. View User’s feedback/Queries:**
 
-  &nbsp; &nbsp; &nbsp; Admin is allowed to view the feedback/Query that has been given by the user in the ‘Contact’ page (Refer Fig 1.3). This includes User’s Name, Email Id, Contact Number and the message(Feedback/ Query) as shown in the Fig 1.20.
+  &nbsp; &nbsp; &nbsp; Admin is allowed to view the feedback/Query that has been given by the user in the ‘MOBILE_NO’ page (Refer Fig 1.3). This includes User’s Name, EMAIL_ID Id, MOBILE_NO Number and the message(Feedback/ Query) as shown in the Fig 1.20.
   
   ![image](https://user-images.githubusercontent.com/36665975/66571573-27134080-eb8d-11e9-8c1f-191a9f491872.png)
   

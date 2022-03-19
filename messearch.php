@@ -10,11 +10,11 @@
 include("newfunc.php");
 if(isset($_POST['mes_search_submit']))
 {
-	$contact=$_POST['mes_contact'];
-	$query = "select * from contact where contact= '$contact'";
+	$MOBILE_NO=$_POST['mes_MOBILE_NO'];
+	$query = "select * from MOBILE_NO where MOBILE_NO= '$MOBILE_NO'";
   $result = mysqli_query($con,$query);
   $row=mysqli_fetch_array($result);
-  if($row['name']=="" & $row['email']=="" & $row['contact']=="" & $row['message']==""){
+  if($row['name']=="" & $row['EMAIL_ID']=="" & $row['MOBILE_NO']=="" & $row['message']==""){
     echo "<script> alert('No entries found! Please enter valid details'); 
           window.location.href = 'admin-panel1.php#list-doc';</script>";
   } 
@@ -26,8 +26,8 @@ if(isset($_POST['mes_search_submit']))
     <thead>
       <tr>
         <th scope='col'>User Name</th>
-        <th scope='col'>Email</th>
-        <th scope='col'>Contact</th>
+        <th scope='col'>EMAIL_ID</th>
+        <th scope='col'>MOBILE_NO</th>
         <th scope='col'>Message</th>
       </tr>
     </thead>
@@ -35,13 +35,13 @@ if(isset($_POST['mes_search_submit']))
   
     
           $name = $row['name'];
-          $email = $row['email'];
-          $contact = $row['contact'];
+          $EMAIL_ID = $row['EMAIL_ID'];
+          $MOBILE_NO = $row['MOBILE_NO'];
           $message = $row['message'];
           echo "<tr>
             <td>$name</td>
-            <td>$email</td>
-            <td>$contact</td>
+            <td>$EMAIL_ID</td>
+            <td>$MOBILE_NO</td>
             <td>$message</td>
           </tr>";
     

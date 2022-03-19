@@ -1,41 +1,49 @@
-body{
+body {
     background: -webkit-linear-gradient(left, #3931af, #00c6ff);
 }
 
 html {
-  overflow-y: scroll; 
+    overflow-y: scroll;
 }
-.contact-form{
+
+.MOBILE_NO-form {
     background: #fff;
     margin-top: 10%;
     margin-bottom: 5%;
     width: 70%;
 }
-.contact-form .form-control{
-    border-radius:1rem;
+
+.MOBILE_NO-form .form-control {
+    border-radius: 1rem;
 }
-.contact-image{
+
+.MOBILE_NO-image {
     text-align: center;
 }
-.contact-image img{
+
+.MOBILE_NO-image img {
     border-radius: 6rem;
     width: 11%;
     margin-top: -4%;
     transform: rotate(29deg);
 }
-.contact-form form{
+
+.MOBILE_NO-form form {
     padding: 14%;
 }
-.contact-form form .row{
+
+.MOBILE_NO-form form .row {
     margin-bottom: -7%;
 }
-.contact-form h3{
+
+.MOBILE_NO-form h3 {
     margin-bottom: 8%;
     margin-top: -13%;
     text-align: center;
     color: #495057;
 }
-.contact-form .btnContact {
+
+.MOBILE_NO-form .btnMOBILE_NO {
     width: 50%;
     border: none;
     border-radius: 1rem;
@@ -44,10 +52,9 @@ html {
     font-weight: 600;
     color: #fff;
     cursor: pointer;
-
 }
-.btnContactSubmit
-{
+
+.btnMOBILE_NOSubmit {
     width: 50%;
     border-radius: 1rem;
     padding: 1.5%;
@@ -57,7 +64,6 @@ html {
     cursor: pointer;
 }
 
-.btnContact{
-     
-     margin-left: 70%;
+.btnMOBILE_NO {
+    margin-left: 70%;
 }

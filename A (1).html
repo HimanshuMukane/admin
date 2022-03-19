@@ -1,153 +1,159 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-* {
-  box-sizing: border-box;
-}
-
-#myInput {
-  background-image: url('/css/searchicon.png');
-  background-position: 10px 10px;
-  background-repeat: no-repeat;
-  width: 100%;
-  font-size: 16px;
-  padding: 12px 20px 12px 40px;
-  border: 1px solid #ddd;
-  margin-bottom: 12px;
-}
-
-#myTable {
-  border-collapse: collapse;
-  width: 100%;
-  border: 1px solid #ddd;
-  font-size: 18px;
-}
-
-#myTable th, #myTable td {
-  text-align: left;
-  padding: 12px;
-}
-body {
-  font-size: 1.6rem;
-  font-family: "Nunito Sans", sans-serif;
-  background-color: #b145b4;
-  color: #f8f4f9;
-}
-
-#myTable tr {
-  border-bottom: 1px solid rgb(82, 14, 76);
-}
-
-#myTable tr.header, #myTable tr:hover {
-  background-color: #382e2e;
-}
-</style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        
+        #myInput {
+            background-image: url('/css/searchicon.png');
+            background-position: 10px 10px;
+            background-repeat: no-repeat;
+            width: 100%;
+            font-size: 16px;
+            padding: 12px 20px 12px 40px;
+            border: 1px solid #ddd;
+            margin-bottom: 12px;
+        }
+        
+        #myTable {
+            border-collapse: collapse;
+            width: 100%;
+            border: 1px solid #ddd;
+            font-size: 18px;
+        }
+        
+        #myTable th,
+        #myTable td {
+            text-align: left;
+            padding: 12px;
+        }
+        
+        body {
+            font-size: 1.6rem;
+            font-family: "Nunito Sans", sans-serif;
+            background-color: #b145b4;
+            color: #f8f4f9;
+        }
+        
+        #myTable tr {
+            border-bottom: 1px solid rgb(82, 14, 76);
+        }
+        
+        #myTable tr.header,
+        #myTable tr:hover {
+            background-color: #382e2e;
+        }
+    </style>
 </head>
+
 <body>
 
-<h2>Employee Details</h2>
+    <h2>Employee Details</h2>
 
-<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+    <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
 
-<table id="myTable">
-  <tr class="header">
-    <th>Employee_No</th>
-    <th>F_name</th>
-    <th>M_name</th>
-    <th>L_name</th>
-    <th>Mother_name</th>
-    <th>EMAIL_ID</th>
-    <th>PHONE_NO</th>    
-    <th>ADDRESS</th>
-    <th>EDN_QUALIFICATION</th>
-    <th>BLOOD_Grp</th>
-    
-  </tr>
-  <tr>
-    <td>A51</td>
-    <td>Akshay</td>
-    <td>Prashant</td>
-    <td>Shah</td>
-    <td>Vibha</td>
-    <td>akshay@gmail.com</td>
-    <td>9135656166</td>
-    <td>Mulund</td>
-    <td>MBA</td>
-    <td>A-</td>
-  </tr>
-  <tr>
-    <td>A52</td>
-    <td>Uday</td>
-    <td>Bhave</td>
-    <td>-</td>
-    <td>Manisha</td>
-    <td>uday56@gmail.com</td>
-    <td>7851429696</td>
-    <td>CST</td>
-    <td>M-Com</td>
-    <td>AB+</td>
-  </tr>
-  <tr>
-    <td>A53</td>
-    <td>Priyank</td>
-    <td>Patel</td>
-    <td>Himanshu</td>
-    <td>-</td>
-    <td>priyank1489@gmail.com</td>
-    <td>123456789</td>
-    <td>Bhandup</td>
-    <td>MBA</td>
-    <td>B-</td>
-  </tr>
-  <tr>
-    <td>A54</td>
-    <td>Henil</td>
-    <td>Deshpande</td>
-    <td>Sidharth</td>
-    <td>Veerti</td>
-    <td>henil78@gmail.com</td>
-    <td>789123458</td>
-    <td>Nahur</td>
-    <td>12th Pass</td>
-    <td>A-</td>
-  </tr>
-  <tr>
-    <td>A55</td>
-    <td>Hemanyt</td>
-    <td>Prakash</td>
-    <td>Shah</td>
-    <td>Kirti</td>
-    <td>hemantkumar@gmail.com</td>
-    <td>9135656166</td>
-    <td>Mulund</td>
-    <td>MBA</td>
-    <td>A-</td>
-  </tr>
-  </table>
+    <table id="myTable">
+        <tr class="header">
+            <th>Employee_No</th>
+            <th>F_name</th>
+            <th>M_name</th>
+            <th>L_name</th>
+            <th>Mother_name</th>
+            <th>EMAIL_ID</th>
+            <th>PHONE_NO</th>
+            <th>ADDRESS</th>
+            <th>EDN_QUALIFICATION</th>
+            <th>BLOOD_Grp</th>
 
-<script>
-function myFunction() {
-  var input, filter, table, tr, td, i, txtValue;
-  input = document.getElementById("myInput");
-  filter = input.value.toUpperCase();
-  table = document.getElementById("myTable");
-  tr = table.getElementsByTagName("tr");
-  td = table.getElementsByTagName("td");
-  for (i = 0; i < tr.length; i++) {
-    td = tr[i].getElementsByTagName("td")[0];
-    if (td) {
-      txtValue = td.textContent || td.innerText;
-      if (txtValue.toUpperCase().indexOf(filter) > -1) {
-        tr[i].style.display = "";
-      } else {
-        tr[i].style.display = "none";
-      }
-    }       
-  }
-}
-</script>
+        </tr>
+        <tr>
+            <td>A51</td>
+            <td>Akshay</td>
+            <td>Prashant</td>
+            <td>Shah</td>
+            <td>Vibha</td>
+            <td>akshay@gmail.com</td>
+            <td>9135656166</td>
+            <td>Mulund</td>
+            <td>MBA</td>
+            <td>A-</td>
+        </tr>
+        <tr>
+            <td>A52</td>
+            <td>Uday</td>
+            <td>Bhave</td>
+            <td>-</td>
+            <td>Manisha</td>
+            <td>uday56@gmail.com</td>
+            <td>7851429696</td>
+            <td>CST</td>
+            <td>M-Com</td>
+            <td>AB+</td>
+        </tr>
+        <tr>
+            <td>A53</td>
+            <td>Priyank</td>
+            <td>Patel</td>
+            <td>Himanshu</td>
+            <td>-</td>
+            <td>priyank1489@gmail.com</td>
+            <td>123456789</td>
+            <td>Bhandup</td>
+            <td>MBA</td>
+            <td>B-</td>
+        </tr>
+        <tr>
+            <td>A54</td>
+            <td>Henil</td>
+            <td>Deshpande</td>
+            <td>Sidharth</td>
+            <td>Veerti</td>
+            <td>henil78@gmail.com</td>
+            <td>789123458</td>
+            <td>Nahur</td>
+            <td>12th Pass</td>
+            <td>A-</td>
+        </tr>
+        <tr>
+            <td>A55</td>
+            <td>Hemanyt</td>
+            <td>Prakash</td>
+            <td>Shah</td>
+            <td>Kirti</td>
+            <td>hemantkumar@gmail.com</td>
+            <td>9135656166</td>
+            <td>Mulund</td>
+            <td>MBA</td>
+            <td>A-</td>
+        </tr>
+    </table>
+
+    <script>
+        function myFunction() {
+            var input, filter, table, tr, td, i, txtValue;
+            input = document.getElementById("myInput");
+            filter = input.value.toUpperCase();
+            table = document.getElementById("myTable");
+            tr = table.getElementsByTagName("tr");
+            td = table.getElementsByTagName("td");
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+        }
+    </script>
 
 </body>
+
 </html>

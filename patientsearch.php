@@ -10,11 +10,11 @@
 include("newfunc.php");
 if(isset($_POST['Teacher_search_submit']))
 {
-	$contact=$_POST['Teacher_contact'];
-	$query = "select * from teacherreg where contact= '$contact'";
+	$MOBILE_NO=$_POST['Teacher_MOBILE_NO'];
+	$query = "select * from teacherreg where MOBILE_NO= '$MOBILE_NO'";
   $result = mysqli_query($con,$query);
   $row=mysqli_fetch_array($result);
-  if($row['lname']=="" & $row['email']=="" & $row['contact']=="" & $row['password']==""){
+  if($row['L_NAME']=="" & $row['EMAIL_ID']=="" & $row['MOBILE_NO']=="" & $row['PASSWORD']==""){
     echo "<script> alert('No entries found! Please enter valid details'); 
           window.location.href = 'admin-panel1.php#list-doc';</script>";
   }
@@ -27,25 +27,25 @@ if(isset($_POST['Teacher_search_submit']))
     <tr>
       <th scope='col'>First Name</th>
       <th scope='col'>Last Name</th>
-      <th scope='col'>Email</th>
-      <th scope='col'>Contact</th>
-      <th scope='col'>Password</th>
+      <th scope='col'>EMAIL_ID</th>
+      <th scope='col'>MOBILE_NO</th>
+      <th scope='col'>PASSWORD</th>
     </tr>
   </thead>
   <tbody>";
 
 	
-		    $fname = $row['fname'];
-        $lname = $row['lname'];
-        $email = $row['email'];
-        $contact = $row['contact'];
-        $password = $row['password'];
+		    $F_NAME = $row['F_NAME'];
+        $L_NAME = $row['L_NAME'];
+        $EMAIL_ID = $row['EMAIL_ID'];
+        $MOBILE_NO = $row['MOBILE_NO'];
+        $PASSWORD = $row['PASSWORD'];
         echo "<tr>
-          <td>$fname</td>
-          <td>$lname</td>
-          <td>$email</td>
-          <td>$contact</td>
-          <td>$password</td>
+          <td>$F_NAME</td>
+          <td>$L_NAME</td>
+          <td>$EMAIL_ID</td>
+          <td>$MOBILE_NO</td>
+          <td>$PASSWORD</td>
         </tr>";
     
 	echo "</tbody></table><center><a href='admin-panel1.php' class='btn btn-light'>Back to dashboard</a></div></center></div></div></div>";

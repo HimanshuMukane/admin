@@ -2,9 +2,9 @@
 session_start();
 $con=mysqli_connect("localhost","root","","admindb");
 if(isset($_POST['search_submit'])){
-  $contact=$_POST['contact'];
+  $MOBILE_NO=$_POST['MOBILE_NO'];
   $docname = $_SESSION['dname'];
- $query="select * from appointmenttb where contact='$contact' and professor='$docname';";
+ $query="select * from appointmenttb where MOBILE_NO='$MOBILE_NO' and professor='$docname';";
  $result=mysqli_query($con,$query);
  echo '<!DOCTYPE html>
 <html lang="en">
@@ -24,8 +24,8 @@ if(isset($_POST['search_submit'])){
     <tr>
       <th>First Name</th>
       <th>Last Name</th>
-      <th>Email</th>
-      <th>Contact</th>
+      <th>EMAIL_ID</th>
+      <th>MOBILE_NO</th>
       <th>Appointment Date</th>
       <th>Appointment Time</th>
     </tr>
@@ -33,17 +33,17 @@ if(isset($_POST['search_submit'])){
   <tbody>
   ';
   while($row=mysqli_fetch_array($result)){
-    $fname=$row['fname'];
-    $lname=$row['lname'];
-    $email=$row['email'];
-    $contact=$row['contact'];
+    $F_NAME=$row['F_NAME'];
+    $L_NAME=$row['L_NAME'];
+    $EMAIL_ID=$row['EMAIL_ID'];
+    $MOBILE_NO=$row['MOBILE_NO'];
     $appdate=$row['appdate'];
     $apptime=$row['apptime'];
     echo '<tr>
-      <td>'.$fname.'</td>
-      <td>'.$lname.'</td>
-      <td>'.$email.'</td>
-      <td>'.$contact.'</td>
+      <td>'.$F_NAME.'</td>
+      <td>'.$L_NAME.'</td>
+      <td>'.$EMAIL_ID.'</td>
+      <td>'.$MOBILE_NO.'</td>
       <td>'.$appdate.'</td>
       <td>'.$apptime.'</td>
     </tr>';

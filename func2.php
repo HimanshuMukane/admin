@@ -3,23 +3,23 @@ session_start();
 $con=mysqli_connect("localhost","root","","admindb");
 if(isset($_POST['patsub1']))
 {
-	$fname=$_POST['fname'];
-  $lname=$_POST['lname'];
+	$F_NAME=$_POST['F_NAME'];
+  $L_NAME=$_POST['L_NAME'];
   $gender=$_POST['gender'];
-  $email=$_POST['email'];
-  $contact=$_POST['contact'];
-	$password=$_POST['password'];
-  $cpassword=$_POST['cpassword'];
-  if($password==$cpassword){
-  	$query="insert into teacherreg(fname,lname,gender,email,contact,password,cpassword) values ('$fname','$lname','$gender','$email','$contact','$password','$cpassword');";
+  $EMAIL_ID=$_POST['EMAIL_ID'];
+  $MOBILE_NO=$_POST['MOBILE_NO'];
+	$PASSWORD=$_POST['PASSWORD'];
+  $cPASSWORD=$_POST['cPASSWORD'];
+  if($PASSWORD==$cPASSWORD){
+  	$query="insert into teacherreg(F_NAME,L_NAME,gender,EMAIL_ID,MOBILE_NO,PASSWORD,cPASSWORD) values ('$F_NAME','$L_NAME','$gender','$EMAIL_ID','$MOBILE_NO','$PASSWORD','$cPASSWORD');";
     $result=mysqli_query($con,$query);
     if($result){
-        $_SESSION['username'] = $_POST['fname']." ".$_POST['lname'];
-        $_SESSION['fname'] = $_POST['fname'];
-        $_SESSION['lname'] = $_POST['lname'];
+        $_SESSION['F_NAME'] = $_POST['F_NAME']." ".$_POST['L_NAME'];
+        $_SESSION['F_NAME'] = $_POST['F_NAME'];
+        $_SESSION['L_NAME'] = $_POST['L_NAME'];
         $_SESSION['gender'] = $_POST['gender'];
-        $_SESSION['contact'] = $_POST['contact'];
-        $_SESSION['email'] = $_POST['email'];
+        $_SESSION['MOBILE_NO'] = $_POST['MOBILE_NO'];
+        $_SESSION['EMAIL_ID'] = $_POST['EMAIL_ID'];
         header("Location:admin-panel.php");
     } 
 
@@ -36,9 +36,9 @@ if(isset($_POST['patsub1']))
 }
 if(isset($_POST['update_data']))
 {
-	$contact=$_POST['contact'];
+	$MOBILE_NO=$_POST['MOBILE_NO'];
 	$status=$_POST['status'];
-	$query="update appointmenttb set payment='$status' where contact='$contact';";
+	$query="update appointmenttb set payment='$status' where MOBILE_NO='$MOBILE_NO';";
 	$result=mysqli_query($con,$query);
 	if($result)
 		header("Location:updated.php");
@@ -95,7 +95,7 @@ function display_admin_panel(){
       </li>
     </ul>
     <form class="form-inline my-2 my-lg-0" method="post" action="search.php">
-      <input class="form-control mr-sm-2" type="text" placeholder="enter contact number" aria-label="Search" name="contact">
+      <input class="form-control mr-sm-2" type="text" placeholder="enter MOBILE_NO number" aria-label="Search" name="MOBILE_NO">
       <input type="submit" class="btn btn-outline-light my-2 my-sm-0 btn btn-outline-light" id="inputbtn" name="search_submit" value="Search">
     </form>
   </div>
@@ -136,13 +136,13 @@ function display_admin_panel(){
               <form class="form-group" method="post" action="appointment.php">
                 <div class="row">
                   <div class="col-md-4"><label>First Name:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control" name="fname"></div><br><br>
+                  <div class="col-md-8"><input type="text" class="form-control" name="F_NAME"></div><br><br>
                   <div class="col-md-4"><label>Last Name:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control"  name="lname"></div><br><br>
-                  <div class="col-md-4"><label>Email id:</label></div>
-                  <div class="col-md-8"><input type="text"  class="form-control" name="email"></div><br><br>
-                  <div class="col-md-4"><label>Contact Number:</label></div>
-                  <div class="col-md-8"><input type="text" class="form-control"  name="contact"></div><br><br>
+                  <div class="col-md-8"><input type="text" class="form-control"  name="L_NAME"></div><br><br>
+                  <div class="col-md-4"><label>EMAIL_ID id:</label></div>
+                  <div class="col-md-8"><input type="text"  class="form-control" name="EMAIL_ID"></div><br><br>
+                  <div class="col-md-4"><label>MOBILE_NO Number:</label></div>
+                  <div class="col-md-8"><input type="text" class="form-control"  name="MOBILE_NO"></div><br><br>
                   <div class="col-md-4"><label>professor:</label></div>
                   <div class="col-md-8">
                    <select name="professor" class="form-control" >
@@ -179,7 +179,7 @@ function display_admin_panel(){
         <div class="card">
           <div class="card-body">
             <form class="form-group" method="post" action="func.php">
-              <input type="text" name="contact" class="form-control" placeholder="enter contact"><br>
+              <input type="text" name="MOBILE_NO" class="form-control" placeholder="enter MOBILE_NO"><br>
               <select name="status" class="form-control">
                <option value="" disabled selected>Select Payment Status to update</option>
                 <option value="paid">paid</option>

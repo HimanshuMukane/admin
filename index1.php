@@ -45,7 +45,7 @@ include("header.php");
           </li>
   
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="contact.html" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>CONTACT</h6></a>
+            <a class="nav-link js-scroll-trigger" href="MOBILE_NO.html" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>MOBILE_NO</h6></a>
           </li>
         </ul>
       </div>
@@ -80,10 +80,10 @@ include("header.php");
               <h3 style="margin-top: 10%">Teacher Login</h3><br>
               <form class="form-group" method="POST" action="func.php">
                 <div class="row" style="margin-top: 10%">
-                  <div class="col-md-4"><label>Email-ID: </label></div>
-                  <div class="col-md-8"><input type="text" name="email" class="form-control" placeholder="enter email ID" required/></div><br><br>
-                  <div class="col-md-4" style="margin-top: 8%"><label>Password: </label></div>
-                  <div class="col-md-8" style="margin-top: 8%"><input type="password" class="form-control" name="password2" placeholder="enter password" required/></div><br><br><br>
+                  <div class="col-md-4"><label>EMAIL_ID-ID: </label></div>
+                  <div class="col-md-8"><input type="text" name="EMAIL_ID" class="form-control" placeholder="enter EMAIL_ID ID" required/></div><br><br>
+                  <div class="col-md-4" style="margin-top: 8%"><label>PASSWORD: </label></div>
+                  <div class="col-md-8" style="margin-top: 8%"><input type="PASSWORD" class="form-control" name="PASSWORD" placeholder="enter PASSWORD" required/></div><br><br><br>
                 </div>
                 <div class="row">
                  <div class="col-md-4"  style="padding-left: 160px;margin-top: 10%">

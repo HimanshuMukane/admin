@@ -4,14 +4,15 @@ include('func.php');
 include('newfunc.php');
 $con=mysqli_connect("localhost","root","","admindb");
 
-
   $pid = $_SESSION['pid'];
-  $username = $_SESSION['username'];
-  $email = $_SESSION['email'];
-  $fname = $_SESSION['fname'];
+  $F_NAME = $_SESSION['F_NAME'];
+  $EMAIL_ID = $_SESSION['EMAIL_ID'];
+  $F_NAME = $_SESSION['F_NAME'];
   $gender = $_SESSION['gender'];
-  $lname = $_SESSION['lname'];
-  $contact = $_SESSION['contact'];
+  $L_NAME = $_SESSION['L_NAME'];
+  $DOB = $_SESSION['DOB'];
+  $CONF_DATE = $_SESSION['CONF_DATE'];
+  $MOBILE_NO = $_SESSION['MOBILE_NO'];
 
 
 ?>
@@ -87,7 +88,7 @@ $con=mysqli_connect("localhost","root","","admindb");
 
     <div class="container-fluid" style="margin-top:50px;">
         <h3 style="margin-left: 40%;  padding-bottom: 20px; font-family: 'IBM Plex Sans', sans-serif;"> Welcome &nbsp
-            <?php echo $username ?>
+            <?php echo $F_NAME ?>
         </h3>
         <div class="row">
   <div class="col-md-4" style="max-width:25%;margin-top: 3%;">
@@ -107,19 +108,19 @@ $con=mysqli_connect("localhost","root","","admindb");
                 <form method="post" action="Profile_update.php">
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    First Name: <input type="text" class="form-control" name="fname" value="<?php echo $fname ?>" onkeydown="return alphaOnly(event);" required/>
+                                    First Name: <input type="text" class="form-control" name="F_NAME" value="<?php echo $F_NAME ?>" onkeydown="return alphaOnly(event);" required/>
                                 </div>
                                 <div class="form-group">
-                                    Email: <input type="email" class="form-control" value="<?php echo $email ?>" name="email" />
+                                    EMAIL_ID: <input type="EMAIL_ID" class="form-control" value="<?php echo $EMAIL_ID ?>" name="EMAIL_ID" />
                                 </div>
                                 <!-- <div class="form-group">
-            <input type="password" class="form-control" placeholder="Password *" id="password" name="password" onkeyup='check();' required/>
+            <input type="PASSWORD" class="form-control" placeholder="PASSWORD *" id="PASSWORD" name="PASSWORD" onkeyup='check();' required/>
         </div> -->
                                 <div class="form-group">
-                                    Last Name: <input type="text" class="form-control" value="<?php echo $lname ?>" name="lname" onkeydown="return alphaOnly(event);" required/>
+                                    Last Name: <input type="text" class="form-control" value="<?php echo $L_NAME ?>" name="L_NAME" onkeydown="return alphaOnly(event);" required/>
                                 </div>
                                 <div class="form-group">
-                                    Contact: <input type="tel" minlength="10" maxlength="10" value="<?php echo $contact ?>" name="contact" class="form-control" />
+                                    MOBILE_NO: <input type="tel" minlength="10" maxlength="10" value="<?php echo $MOBILE_NO ?>" name="MOBILE_NO" class="form-control" />
                                 </div>
                                 <input type="submit" class="btnRegister" name="patsub1" onclick="return checklen();" value="Update" />
                             </div>
@@ -138,10 +139,7 @@ $con=mysqli_connect("localhost","root","","admindb");
                         <div class="container-fluid container-fullw bg-white">
                         </div>
                     </div>
-
                     <div class="tab-pane fade" id="app-hist" role="tabpanel" aria-labelledby="list-pat-list">
-
-                        
                     <br>
                 </div>
 
@@ -173,7 +171,6 @@ $con=mysqli_connect("localhost","root","","admindb");
     </script>
 
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>
-
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js'></script>
 <script id="rendered-js">
     $(".hamburger").click(function() {

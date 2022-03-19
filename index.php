@@ -18,8 +18,8 @@
 
 <script>
     var check = function() {
-  if (document.getElementById('password').value ==
-    document.getElementById('cpassword').value) {
+  if (document.getElementById('PASSWORD').value ==
+    document.getElementById('cPASSWORD').value) {
     document.getElementById('message').style.color = '#5dd05d';
     document.getElementById('message').innerHTML = 'Matched';
   } else {
@@ -35,9 +35,9 @@ function alphaOnly(event) {
 
 function checklen()
 {
-    var pass1 = document.getElementById("password");  
+    var pass1 = document.getElementById("PASSWORD");  
     if(pass1.value.length<6){  
-        alert("Password must be at least 6 characters long. Try again!");  
+        alert("PASSWORD must be at least 6 characters long. Try again!");  
         return false;  
   }  
 }
@@ -61,7 +61,7 @@ function checklen()
             <a class="nav-link js-scroll-trigger" href="index.php" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>Register</h6></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="contact.html" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>CONTACT</h6></a>
+            <a class="nav-link js-scroll-trigger" href="MOBILE_NO.html" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>MOBILE_NO</h6></a>
           </li>
         </ul>
       </div>
@@ -94,13 +94,13 @@ function checklen()
                                 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="First Name *" name="fname"  onkeydown="return alphaOnly(event);" required/>
+                                            <input type="text" class="form-control"  placeholder="First Name *" name="F_NAME"  onkeydown="return alphaOnly(event);" required/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Your Email *" name="email"  />
+                                            <input type="EMAIL_ID" class="form-control" placeholder="Your EMAIL_ID *" name="EMAIL_ID"  />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" id="password" name="password" onkeyup='check();' required/>
+                                            <input type="PASSWORD" class="form-control" placeholder="PASSWORD *" id="PASSWORD" name="PASSWORD" onkeyup='check();' required/>
                                         </div>
                                         
                                         <div class="form-group">
@@ -120,13 +120,13 @@ function checklen()
                                 
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" name="lname" onkeydown="return alphaOnly(event);" required/>
+                                            <input type="text" class="form-control" placeholder="Last Name *" name="L_NAME" onkeydown="return alphaOnly(event);" required/>
                                         </div>
                                         <div class="form-group">
-                                            <input type="tel" minlength="10" maxlength="10" name="contact" class="form-control" placeholder="Your Phone *"  />
+                                            <input type="tel" minlength="10" maxlength="10" name="MOBILE_NO" class="form-control" placeholder="Your Phone *"  />
                                         </div>
                                         <div class="form-group">
-                                            <input type="password" class="form-control"  id="cpassword" placeholder="Confirm Password *" name="cpassword"  onkeyup='check();' required/><span id='message'></span>
+                                            <input type="PASSWORD" class="form-control"  id="cPASSWORD" placeholder="Confirm PASSWORD *" name="cPASSWORD"  onkeyup='check();' required/><span id='message'></span>
                                         </div>
                                         <input type="submit" class="btnRegister" name="patsub1" onclick="return checklen();" value="Register"/>
                                     </div>
@@ -141,12 +141,12 @@ function checklen()
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="User Name *" name="username3" onkeydown="return alphaOnly(event);" required/>
+                                            <input type="text" class="form-control" placeholder="User Name *" name="F_NAME3" onkeydown="return alphaOnly(event);" required/>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" name="password3" required/>
+                                            <input type="PASSWORD" class="form-control" placeholder="PASSWORD *" name="PASSWORD3" required/>
                                         </div>
                                         
                                         <input type="submit" class="btnRegister" name="docsub1" value="Login"/>
@@ -162,7 +162,7 @@ function checklen()
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="User Name *" name="username1" onkeydown="return alphaOnly(event);" required/>
+                                            <input type="text" class="form-control" placeholder="User Name *" name="F_NAME1" onkeydown="return alphaOnly(event);" required/>
                                         </div>
                                         
 
@@ -170,7 +170,7 @@ function checklen()
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" name="password2" required/>
+                                            <input type="PASSWORD" class="form-control" placeholder="PASSWORD *" name="PASSWORD2" required/>
                                         </div>
                                         
                                         <input type="submit" class="btnRegister" name="adsub" value="Login"/>

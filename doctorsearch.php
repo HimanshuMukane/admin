@@ -11,11 +11,11 @@
 include("newfunc.php");
 if(isset($_POST['professor_search_submit']))
 {
-	$contact=$_POST['professor_contact'];
-  $query = "select * from doctb where email= '$contact'";
+	$MOBILE_NO=$_POST['professor_MOBILE_NO'];
+  $query = "select * from doctb where EMAIL_ID= '$MOBILE_NO'";
   $result = mysqli_query($con,$query);
   $row=mysqli_fetch_array($result);
-  if($row['username']=="" & $row['password']=="" & $row['email']=="" & $row['docFees']==""){
+  if($row['F_NAME']=="" & $row['PASSWORD']=="" & $row['EMAIL_ID']=="" & $row['docFees']==""){
     echo "<script> alert('No entries found!'); 
           window.location.href = 'admin-panel1.php#list-doc';</script>";
   }
@@ -26,23 +26,23 @@ if(isset($_POST['professor_search_submit']))
 <table class='table table-hover'>
   <thead>
     <tr>
-      <th scope='col'>Username</th>
-      <th scope='col'>Password</th>
-      <th scope='col'>Email</th>
+      <th scope='col'>F_NAME</th>
+      <th scope='col'>PASSWORD</th>
+      <th scope='col'>EMAIL_ID</th>
       <th scope='col'>Consultancy Fees</th>
     </tr>
   </thead>
   <tbody>";
 
 	// while ($row=mysqli_fetch_array($result)){
-		    $username = $row['username'];
-        $password = $row['password'];
-        $email = $row['email'];
+		    $F_NAME = $row['F_NAME'];
+        $PASSWORD = $row['PASSWORD'];
+        $EMAIL_ID = $row['EMAIL_ID'];
         $docFees = $row['docFees'];
         echo "<tr>
-          <td>$username</td>
-          <td>$password</td>
-          <td>$email</td>
+          <td>$F_NAME</td>
+          <td>$PASSWORD</td>
+          <td>$EMAIL_ID</td>
           <td>$docFees</td>
         </tr>";
 	// }

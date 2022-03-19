@@ -2,25 +2,25 @@
 session_start();
 $con=mysqli_connect("localhost","root","","admindb");
 if(isset($_POST['adsub'])){
-	$username=$_POST['username1'];
-	$password=$_POST['password2'];
-	$query="select * from admintb where username='$username' and password='$password';";
+	$F_NAME=$_POST['F_NAME1'];
+	$PASSWORD=$_POST['PASSWORD2'];
+	$query="select * from admintb where F_NAME='$F_NAME' and PASSWORD='$PASSWORD';";
 	$result=mysqli_query($con,$query);
 	if(mysqli_num_rows($result)==1)
 	{
-		$_SESSION['username']=$username;
+		$_SESSION['F_NAME']=$F_NAME;
 		header("Location:admin-panel1.php");
 	}
 	else
 		// header("Location:error2.php");
-		echo("<script>alert('Invalid Username or Password. Try Again!');
+		echo("<script>alert('Invalid F_NAME or PASSWORD. Try Again!');
           window.location.href = 'index.php';</script>");
 }
 if(isset($_POST['update_data']))
 {
-	$contact=$_POST['contact'];
+	$MOBILE_NO=$_POST['MOBILE_NO'];
 	$status=$_POST['status'];
-	$query="update appointmenttb set payment='$status' where contact='$contact';";
+	$query="update appointmenttb set payment='$status' where MOBILE_NO='$MOBILE_NO';";
 	$result=mysqli_query($con,$query);
 	if($result)
 		header("Location:updated.php");
