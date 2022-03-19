@@ -25,7 +25,6 @@ $con=mysqli_connect("localhost","root","","admindb");
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="css/nav.css">
     <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 
     <!-- Bootstrap CSS -->
@@ -91,59 +90,17 @@ $con=mysqli_connect("localhost","root","","admindb");
             <?php echo $username ?>
         </h3>
         <div class="row">
+  <div class="col-md-4" style="max-width:25%;margin-top: 3%;">
+    <div class="list-group" id="list-tab" role="tablist">
+      <a class="list-group-item list-group-item-action active" id="list-dash-list" data-toggle="list" href="#list-dash" role="tab" aria-controls="home">Dashboard</a>
+      <a class="list-group-item list-group-item-action" href="#list-prof" id="list-prof-list"  role="tab"    aria-controls="home" data-toggle="list">professor List</a>
+      
+    </div><br>
+  </div>
         <div class="wrapper">
         <div class="main_body">
 
-            <div class="sidebar_menu">
-                <div class="inner__sidebar_menu">
-
-                    <ul>
-                        <li>
-                                <span class="icon">
-		              	<i class="fas fa-border-all"></i></span>
-                    <a id="list-dash-list" data-toggle="list" href="#list-dash" role="tab" aria-controls="home">Dashboard</a>
-                        </li>
-                        <li>
-                                <span class="icon"><i class="fas fa-chart-pie"></i></span>
-                                <a href="#app-hist" id="list-pat-list" role="tab" data-toggle="list" aria-controls="home">Update Profile</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon"><i class="fas fa-address-book"></i></span>
-                                <span class="list">Contact</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon"><i class="fas fa-address-card"></i></span>
-                                <span class="list">About</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon"><i class="fab fa-blogger"></i></span>
-                                <span class="list">Blogs</span>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <span class="icon"><i class="fas fa-map-marked-alt"></i></span>
-                                <span class="list">Maps</span>
-                            </a>
-                        </li>
-                    </ul>
-
-                    <div class="hamburger">
-                        <div class="inner_hamburger">
-                            <span class="arrow">
-			                <i class="fas fa-long-arrow-alt-left"></i>
-			                <i class="fas fa-long-arrow-alt-right"></i>
-			            </span>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            
 
             <div class="container">
                 <div class="item_wrap">
