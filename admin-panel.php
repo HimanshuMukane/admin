@@ -105,27 +105,70 @@ $con=mysqli_connect("localhost","root","","admindb");
 
             <div class="container">
                 <div class="item_wrap">
-                <form method="post" action="Profile_update.php">
-                            <div class="col-md-6">
-                                <div class="form-group">
-                                    First Name: <input type="text" class="form-control" name="F_NAME" value="<?php echo $F_NAME ?>" onkeydown="return alphaOnly(event);" required/>
-                                </div>
-                                <div class="form-group">
-                                    EMAIL_ID: <input type="EMAIL_ID" class="form-control" value="<?php echo $EMAIL_ID ?>" name="EMAIL_ID" />
-                                </div>
-                                <!-- <div class="form-group">
-            <input type="PASSWORD" class="form-control" placeholder="PASSWORD *" id="PASSWORD" name="PASSWORD" onkeyup='check();' required/>
-        </div> -->
-                                <div class="form-group">
-                                    Last Name: <input type="text" class="form-control" value="<?php echo $L_NAME ?>" name="L_NAME" onkeydown="return alphaOnly(event);" required/>
-                                </div>
-                                <div class="form-group">
-                                    MOBILE_NO: <input type="tel" minlength="10" maxlength="10" value="<?php echo $MOBILE_NO ?>" name="MOBILE_NO" class="form-control" />
-                                </div>
-                                <input type="submit" class="btnRegister" name="patsub1" onclick="return checklen();" value="Update" />
-                            </div>
-                    </div>
-                    </form>
+                    <form action="" method="POST">
+            <?php
+            $con=mysqli_connect("localhost","root","","admindb");
+
+            $ids = $_GET['pid'];
+            $showquery = "SELECT * FROM `teacherreg` WHERE id={$ids}";
+            $showdata = mysqli_query($con, $showquery);
+            $arrdata = mysqli_fetch_array($showdata);
+
+            if (isset($_POST['submit'])) {
+
+                $idupdate = $_GET['pid'];
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $phone = $_POST['phone'];
+                $degree = $_POST['degree'];
+                $reference = $_POST['reference'];
+
+                $updatequery = "UPDATE `teacherreg` SET `name`='$name',`email`='$email',`phone`='$phone',`degree`='$degree',`reference`='$reference' WHERE id=$idupdate";
+            
+                $res = mysqli_query($con, $updatequery);
+
+                if ($res) {
+            ?>
+                    <script>
+                        alert("data updated properly");
+                    </script>
+                    <?php
+                    }else{
+                    ?>
+                    <script>
+                        alert("data not updated properly");
+                    </script>
+            <?php
+                }
+            }
+            ?>
+            <div class="form-group">
+                <label for="F_NAME">F_NAME</label>
+                <input type="text" name="name" value="<?php echo $arrdata['F_NAME']; ?>" class="form-control" id="F_NAME" aria-describedby="emailHelp">
+            </div>
+
+            <div class="form-group">
+                <label for="email">EMAIL_ID</label>
+                <input type="email" name="EMAIL_ID" value="<?php echo $arrdata['EMAIL_ID']; ?>" class="form-control" id="EMAIL_ID" aria-describedby="emailHelp">
+                <small id="emailHelp" class="form-text text-muted"></small>
+            </div>
+            <div class="form-group">
+                <label for="name">phone</label>
+                <input type="number" name="phone" value="<?php echo $arrdata['phone']; ?>" class="form-control" id="phone" aria-describedby="phoneHelp">
+            </div>
+            <div class="form-group">
+                <label for="name">degree</label>
+                <input type="text" name="degree" value="<?php echo $arrdata['degree']; ?>" class="form-control" id="degree" aria-describedby="emailHelp">
+            </div>
+            <div class="form-group">
+                <label for="name">reference</label>
+                <input type="text" name="reference" value="<?php echo $arrdata['reference']; ?>" class="form-control" id="reference" aria-describedby="emailHelp">
+            </div>
+
+
+
+            <button type="submit" name="submit" class="btn btn-primary">update</button>
+        </form>
                 </div>
 
             </div>
@@ -167,7 +210,6 @@ $con=mysqli_connect("localhost","root","","admindb");
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/6.10.1/sweetalert2.all.min.js">
     </script>
 
 <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-1b93190375e9ccc259df3a57c1abc0e64599724ae30d7ea4c6877eb615f89387.js"></script>

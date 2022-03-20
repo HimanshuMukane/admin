@@ -44,11 +44,8 @@ if(isset($_POST['docsub1']))
     <meta charset="utf-8">
     <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" type="text/css" href="font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="style.css">
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="vendor/fontawesome/css/font-awesome.min.css">
-    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
       <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top">
     <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap-table/1.10.0/bootstrap-table.min.css'>
@@ -175,58 +172,50 @@ if(isset($_POST['docsub1']))
       <div class="tab-pane fade" id="list-prof" role="tabpanel" aria-labelledby="list-home-list">
               
               <div class="col-md-8">
-      
     </div>
     <table id="table" data-toggle="table" data-search="true" data-filter-control="true" data-click-to-select="true" data-toolbar="#toolbar" class="table-responsive table table-hover">
                 <thead>
                   <tr>
                   <th data-field="F_NAME" data-filter-control="input" data-sortable="true" scope="col">First Name</th>
                   <th data-field="L_NAME" data-filter-control="input" data-sortable="true" scope="col">Last Name</th>
-                    <th data-field="MAR_ST" data-filter-control="input" data-sortable="true" scope="col">Mail</th>
-                    <th data-field="EMAIL_ID" data-filter-control="select" data-sortable="true" scope="col">Gender</th>
-                    <th data-field="MOBILE_NO" data-filter-control="input" data-sortable="true" scope="col">MOBILE_NO</th>
-                    <th data-field="PASSWORD" data-filter-control="input" data-sortable="true" scope="col">Date of Joining</th>
-                    <th data-field="DOB" data-filter-control="input" data-sortable="true" scope="col">Date of Leaving</th>
-                    <th data-field="CONF_DATE" data-filter-control="select" data-sortable="true" scope="col">Branch</th>
+                  <th data-field="MAR_ST" data-filter-control="input" data-sortable="true" scope="col">Mail</th>
+                  <th data-field="EMAIL_ID" data-filter-control="select" data-sortable="true" scope="col">Gender</th>
+                  <th data-field="MOBILE_NO" data-filter-control="input" data-sortable="true" scope="col">MOBILE_NO</th>
+                  <th data-field="PASSWORD" data-filter-control="input" data-sortable="true" scope="col">Date of Joining</th>
+                  <th data-field="DOB" data-filter-control="input" data-sortable="true" scope="col">Date of Leaving</th>
+                  <th data-field="CONF_DATE" data-filter-control="select" data-sortable="true" scope="col">Branch</th>
+                  <th>Update</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <?php 
+                 
+                <?php 
                     $con=mysqli_connect("localhost","root","","admindb");
                     global $con;
                     $query = "select * from teacherreg";
+
                     $result = mysqli_query($con,$query);
                     while ($row = mysqli_fetch_array($result)){
-                      $F_NAME = $row['F_NAME'];
-                      $L_NAME = $row['L_NAME'];
-                      $MAR_ST = $row['MAR_ST'];
-                      $EMAIL_ID = $row['EMAIL_ID'];
-                      $MOBILE_NO = $row['MOBILE_NO'];
-                      $PASSWORD = $row['PASSWORD'];
-                      $DOB = $row['DOB'];
-                      $CONF_DATE = $row['CONF_DATE'];
-                      
-                      echo "<tr>
-                      <td>$F_NAME</td>
-                      <td>$L_NAME</td>
-                      <td>$MAR_ST</td>
-                      <td>$EMAIL_ID</td>
-                        <td>$MOBILE_NO</td>
-                        <td>$PASSWORD</td>
-                        <td>$DOB</td>
-                        <td>$CONF_DATE</td>
-                      </tr>";
-                    }
+                      ?>
 
-                  ?>
+                      <tr>
+                      <td><?php echo $row['pid'];?></td>
+                        <td><?php echo $row['F_NAME'];?></td>
+                        <td><?php echo $row['L_NAME'];?></td>
+                        <td><?php echo $row['MAR_ST'];?></td>
+                        <td><?php echo $row['EMAIL_ID'];?></td>
+                        <td><?php echo $row['MOBILE_NO'];?></td>
+                        <td><?php echo $row['DOB'];?></td>
+                        <td><?php echo $row['CONF_DATE'];?></td>
+                        <td>EDIT
+                        </td>
+                      </tr>
+                    <?php } ?>
                 </tbody>
               </table>
         <br>
       </div>
     
-
-
-
 <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
 
     </div>
@@ -264,6 +253,7 @@ if(isset($_POST['docsub1']))
         $(trBoldBlue).on("click", "tr", function() {
             $(this).toggleClass("bold-blue");
         });
+
     </script>
 
   </body>

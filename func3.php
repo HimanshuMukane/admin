@@ -3,7 +3,7 @@ session_start();
 $con=mysqli_connect("localhost","root","","admindb");
 if(isset($_POST['adsub'])){
 	$F_NAME=$_POST['F_NAME1'];
-	$PASSWORD=$_POST['PASSWORD2'];
+	$password=$_POST['PASSWORD2'];
 	$query="select * from admintb where F_NAME='$F_NAME' and PASSWORD='$PASSWORD';";
 	$result=mysqli_query($con,$query);
 	if(mysqli_num_rows($result)==1)
