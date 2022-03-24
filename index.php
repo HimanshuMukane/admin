@@ -86,7 +86,7 @@ function checklen()
                         <div class="tab-content" id="myTabContent">
                             <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                                 <h3 class="register-heading">Register as Professor</h3>
-                                <form method="post" action="func2.php">
+                                <form method="post" action="func1.php">
                                 <div class="row register-form">
                                 
                                 <div class="col-md-6">
@@ -102,7 +102,7 @@ function checklen()
                                         </div>
                  <div class="col-md-4"  style="margin-left: 70%">
                     <!-- <input type="submit" id="inputbtn" name="patsub" value="Login" class="btn btn-primary"> -->
-                    <input type="submit" class="btnRegister" name="patsub" value="Login"/></div>           
+                    <input type="submit" class="btnRegister" name="patsub" value="Login"/></div> 
                  <!--  <div class="col-md-8" style="margin-top: 10%">
                     <a href="index.php" class="btn btn-primary">Back</a></div> -->
                                 </div>
@@ -136,12 +136,12 @@ function checklen()
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="User Name *" name="username1" onkeydown="return alphaOnly(event);" required/>
+                                        <label>EMAIL_ID: </label>  <input type="text" class="form-control" placeholder="User Name *" name="username1" onkeydown="return alphaOnly(event);" required/>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="PASSWORD" class="form-control" placeholder="PASSWORD *" name="PASSWORD2" required/>
+                                        <label>Password: </label>   <input type="PASSWORD" class="form-control" placeholder="PASSWORD *" name="PASSWORD2" required/>
                                         </div>
                                         
                                         <input type="submit" class="btnRegister" name="adsub" value="Login"/>

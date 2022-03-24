@@ -1,20 +1,38 @@
 <!DOCTYPE html>
-<?php 
+<?php
+include 'connection.php';
 include('func.php');  
 include('newfunc.php');
-$con=mysqli_connect("localhost","root","","admindb");
-
-  $pid = $_SESSION['pid'];
-  $F_NAME = $_SESSION['F_NAME'];
-  $EMAIL_ID = $_SESSION['EMAIL_ID'];
-  $F_NAME = $_SESSION['F_NAME'];
-  $gender = $_SESSION['gender'];
-  $L_NAME = $_SESSION['L_NAME'];
-  $DOB = $_SESSION['DOB'];
-  $CONF_DATE = $_SESSION['CONF_DATE'];
-  $MOBILE_NO = $_SESSION['MOBILE_NO'];
 
 
+if (isset($_POST['submit'])) {
+
+    $F_NAME = $_POST['F_NAME'];
+    $EMAIL_ID = $_POST['EMAIL_ID'];
+    $MOBILE_NO = $_POST['MOBILE_NO'];
+    $DOB = $_POST['DOB'];
+    $L_NAME = $_POST['lastname'];
+
+    $insertquery = "INSERT INTO `teacherreg` ( `F_NAME`, `EMAIL_ID`, `MOBILE_NO`, `DOB`, `lastname`) VALUES ('$F_NAME', '$EMAIL_ID', '$MOBILE_NO', '$DOB', '$L_NAME')";
+
+    $res = mysqli_query($con, $insertquery);
+
+    if ($res) {
+?>
+        <script>
+            alert("data insert properly");
+        </script>
+    <?php
+
+    } else {
+    ?>
+        <script>
+            alert("data not insert properly");
+        </script>
+<?php
+
+    }
+}
 ?>
 <html lang="en">
 
@@ -101,108 +119,36 @@ $con=mysqli_connect("localhost","root","","admindb");
         <div class="wrapper">
         <div class="main_body">
 
-            
 
-            <div class="container">
-                <div class="item_wrap">
-                    <form action="" method="POST">
-            <?php
-            $con=mysqli_connect("localhost","root","","admindb");
 
-            $ids = $_GET['pid'];
-            $showquery = "SELECT * FROM `teacherreg` WHERE id={$ids}";
-            $showdata = mysqli_query($con, $showquery);
-            $arrdata = mysqli_fetch_array($showdata);
-
-            if (isset($_POST['submit'])) {
-
-                $idupdate = $_GET['pid'];
-                $name = $_POST['name'];
-                $email = $_POST['email'];
-                $phone = $_POST['phone'];
-                $degree = $_POST['degree'];
-                $reference = $_POST['reference'];
-
-                $updatequery = "UPDATE `teacherreg` SET `name`='$name',`email`='$email',`phone`='$phone',`degree`='$degree',`reference`='$reference' WHERE id=$idupdate";
-            
-                $res = mysqli_query($con, $updatequery);
-
-                if ($res) {
-            ?>
-                    <script>
-                        alert("data updated properly");
-                    </script>
-                    <?php
-                    }else{
-                    ?>
-                    <script>
-                        alert("data not updated properly");
-                    </script>
-            <?php
-                }
-            }
-            ?>
+    <div class="container mt-3">
+        <h1>Contact us for your concerns</h1>
+        <a href="display.php">check form</a>
+        <form action="" method="POST">
             <div class="form-group">
-                <label for="F_NAME">F_NAME</label>
-                <input type="text" name="name" value="<?php echo $arrdata['F_NAME']; ?>" class="form-control" id="F_NAME" aria-describedby="emailHelp">
+                <label for="name">Name</label>
+                <input type="text" name="name" value="" class="form-control" id="name" aria-describedby="EMAIL_IDHelp">
             </div>
 
             <div class="form-group">
-                <label for="email">EMAIL_ID</label>
-                <input type="email" name="EMAIL_ID" value="<?php echo $arrdata['EMAIL_ID']; ?>" class="form-control" id="EMAIL_ID" aria-describedby="emailHelp">
-                <small id="emailHelp" class="form-text text-muted"></small>
+                <label for="EMAIL_ID">EMAIL_ID</label>
+                <input type="EMAIL_ID" name="EMAIL_ID" class="form-control" value="" id="EMAIL_ID" aria-describedby="EMAIL_IDHelp">
             </div>
             <div class="form-group">
-                <label for="name">phone</label>
-                <input type="number" name="phone" value="<?php echo $arrdata['phone']; ?>" class="form-control" id="phone" aria-describedby="phoneHelp">
+                <label for="name">MOBILE_NO</label>
+                <input type="number" name="MOBILE_NO" value="" class="form-control" id="MOBILE_NO" aria-describedby="MOBILE_NOHelp">
             </div>
             <div class="form-group">
-                <label for="name">degree</label>
-                <input type="text" name="degree" value="<?php echo $arrdata['degree']; ?>" class="form-control" id="degree" aria-describedby="emailHelp">
+                <label for="name">DOB</label>
+                <input type="text" name="DOB" value="" class="form-control" id="DOB" aria-describedby="EMAIL_IDHelp">
             </div>
             <div class="form-group">
-                <label for="name">reference</label>
-                <input type="text" name="reference" value="<?php echo $arrdata['reference']; ?>" class="form-control" id="reference" aria-describedby="emailHelp">
+                <label for="name">lastname</label>
+                <input type="text" name="lastname" value="" class="form-control" id="lastname" aria-describedby="EMAIL_IDHelp">
             </div>
-
-
-
-            <button type="submit" name="submit" class="btn btn-primary">update</button>
+            <button type="submit" name="submit" class="btn btn-primary">Submit</button>
         </form>
-                </div>
-
-            </div>
-        </div>
     </div>
-    <br>
-            </div>
-            <div class="col-md-8" style="margin-top: 3%;">
-                <div class="tab-content" id="nav-tabContent" style="width: 950px;">
-                    <div class="tab-pane fade  show active" id="list-dash" role="tabpanel" aria-labelledby="list-dash-list">
-                        <div class="container-fluid container-fullw bg-white">
-                        </div>
-                    </div>
-                    <div class="tab-pane fade" id="app-hist" role="tabpanel" aria-labelledby="list-pat-list">
-                    <br>
-                </div>
-
-                <div class="tab-pane fade" id="list-pres" role="tabpanel" aria-labelledby="list-pres-list">
-
-                    <br>
-                </div>
-
-                <div class="tab-pane fade" id="list-messages" role="tabpanel" aria-labelledby="list-messages-list">...</div>
-                <div class="tab-pane fade" id="list-settings" role="tabpanel" aria-labelledby="list-settings-list">
-                    <form class="form-group" method="post" action="func.php">
-                        <label>professors name: </label>
-                        <input type="text" name="name" placeholder="Enter professors name" class="form-control">
-                        <br>
-                        <input type="submit" name="doc_sub" value="Add professor" class="btn btn-primary">
-                    </form>
-                </div>
-                <div class="tab-pane fade" id="list-attend" role="tabpanel" aria-labelledby="list-attend-list">...</div>
-            </div>
-        </div>
     </div>
     </div>
     <!-- Optional JavaScript -->
