@@ -19,7 +19,6 @@ if(isset($_POST['docsub']))
   }
 }
 
-
 if(isset($_POST['docsub1']))
 {
   $dEMAIL_ID=$_POST['dEMAIL_ID'];

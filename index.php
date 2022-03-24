@@ -51,7 +51,7 @@ function checklen()
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav" >
     <div class="container">
 
-      <a class="navbar-brand js-scroll-trigger" href="#" style="margin-top: 10px;margin-left:-65px;font-family: 'IBM Plex Sans', sans-serif;"><h4><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp GLOBAL HOSPITALS</h4></a>
+      <a class="navbar-brand js-scroll-trigger" href="#" style="margin-top: 10px;margin-left:-65px;font-family: 'IBM Plex Sans', sans-serif;"><h4><i class="fa fa-user-plus" aria-hidden="true"></i>&nbsp ADMIN MODULE</h4></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -59,9 +59,6 @@ function checklen()
         <ul class="navbar-nav ml-auto">
           <li class="nav-item" style="margin-right: 40px;">
             <a class="nav-link js-scroll-trigger" href="index.php" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>Register</h6></a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="MOBILE_NO.html" style="color: white;font-family: 'IBM Plex Sans', sans-serif;"><h6>MOBILE_NO</h6></a>
           </li>
         </ul>
       </div>
@@ -92,45 +89,22 @@ function checklen()
                                 <form method="post" action="func2.php">
                                 <div class="row register-form">
                                 
+                                <div class="col-md-6">
+                                        <div class="form-group">
+                                        <label>EMAIL_ID: </label> <input type="text" name="EMAIL_ID" class="form-control" placeholder="enter EMAIL_ID ID" required/>
+                                        </div>
+                                        </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control"  placeholder="First Name *" name="F_NAME"  onkeydown="return alphaOnly(event);" required/>
+                                        <label>PASSWORD: </label>
+                                        <input type="PASSWORD" class="form-control" name="PASSWORD" placeholder="enter PASSWORD" required/>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="EMAIL_ID" class="form-control" placeholder="Your EMAIL_ID *" name="EMAIL_ID"  />
                                         </div>
-                                        <div class="form-group">
-                                            <input type="PASSWORD" class="form-control" placeholder="PASSWORD *" id="PASSWORD" name="PASSWORD" onkeyup='check();' required/>
-                                        </div>
-                                        
-                                        <div class="form-group">
-                                            <div class="maxl">
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="Male" checked>
-                                                    <span> Male </span> 
-                                                </label>
-                                                <label class="radio inline"> 
-                                                    <input type="radio" name="gender" value="Female">
-                                                    <span>Female </span> 
-                                                </label>
-                                            </div>
-                                            <a href="index1.php">Already have an account?</a>
-                                        </div>
-                                    </div>
-                                
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" name="L_NAME" onkeydown="return alphaOnly(event);" required/>
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="tel" minlength="10" maxlength="10" name="MOBILE_NO" class="form-control" placeholder="Your Phone *"  />
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="PASSWORD" class="form-control"  id="cPASSWORD" placeholder="Confirm PASSWORD *" name="cPASSWORD"  onkeyup='check();' required/><span id='message'></span>
-                                        </div>
-                                        <input type="submit" class="btnRegister" name="patsub1" onclick="return checklen();" value="Register"/>
-                                    </div>
-
+                 <div class="col-md-4"  style="margin-left: 70%">
+                    <!-- <input type="submit" id="inputbtn" name="patsub" value="Login" class="btn btn-primary"> -->
+                    <input type="submit" class="btnRegister" name="patsub" value="Login"/></div>           
+                 <!--  <div class="col-md-8" style="margin-top: 10%">
+                    <a href="index.php" class="btn btn-primary">Back</a></div> -->
                                 </div>
                             </form>
                             </div>
@@ -162,11 +136,8 @@ function checklen()
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="User Name *" name="F_NAME1" onkeydown="return alphaOnly(event);" required/>
+                                            <input type="text" class="form-control" placeholder="User Name *" name="username1" onkeydown="return alphaOnly(event);" required/>
                                         </div>
-                                        
-
-
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">

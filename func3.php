@@ -2,18 +2,18 @@
 session_start();
 $con=mysqli_connect("localhost","root","","admindb");
 if(isset($_POST['adsub'])){
-	$F_NAME=$_POST['F_NAME1'];
+	$username=$_POST['username1'];
 	$password=$_POST['PASSWORD2'];
-	$query="select * from admintb where F_NAME='$F_NAME' and PASSWORD='$PASSWORD';";
+	$query="select * from admintb where username='$username' and PASSWORD='$password';";
 	$result=mysqli_query($con,$query);
 	if(mysqli_num_rows($result)==1)
 	{
-		$_SESSION['F_NAME']=$F_NAME;
+		$_SESSION['username']=$username;
 		header("Location:admin-panel1.php");
 	}
 	else
 		// header("Location:error2.php");
-		echo("<script>alert('Invalid F_NAME or PASSWORD. Try Again!');
+		echo("<script>alert('Invalid username or password. Try Again!');
           window.location.href = 'index.php';</script>");
 }
 if(isset($_POST['update_data']))
