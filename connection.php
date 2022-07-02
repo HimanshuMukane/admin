@@ -9,7 +9,6 @@ if($con){
     // echo"connection successfull";
     ?>
     <?php
-
 }
 else{
     echo "no connection";
